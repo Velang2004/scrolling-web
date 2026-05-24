@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-fly-out-right: flyOutRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-fly-in-left: flyInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-fly-out-up: flyOutUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-fly-in-up: flyInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-spin-slow: spin 18s linear infinite;
+}
+
+@keyframes flyOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(250%); opacity: 0; }
+}
+@keyframes flyInLeft {
+  from { transform: translateX(-250%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes flyOutUp {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-150%); opacity: 0; }
+}
+@keyframes flyInUp {
+  from { transform: translateY(150%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+::selection { background: rgba(255,255,255,0.15); color: #fff; }
